@@ -13,16 +13,10 @@ import { app, server } from "./socket.js"
 dotenv.config()
 
 const port=process.env.PORT || 5000
-const allowedOrigins = [
-  "http://localhost:5173", 
-  "https://vybe-frontend-nlge.onrender.com"  
-];
-
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
-}));
+    origin:"https://vybe-frontend-nlge.onrender.com",
+    credentials:true
+}))
 
 app.use(express.json())
 app.use(cookieParser())
